@@ -1,0 +1,161 @@
+/* Mixins and vars */
+$primary-color: #2B77CE;
+$secondary-color: #FFF;
+$third-color: #F1F0F1;
+$btn-primary: #4CAF50;
+$btn-secondary: #3797EE;
+$textColor: #666666;
+
+$lightPanelColor: #FBFBFB;
+$validationErrorColor: #d84242;
+
+
+@mixin absolute-center($width, $height) {
+  position: absolute;
+  width: $width + px;
+  height: $height + px;
+  left: 50%;
+  top: 50%;
+  margin-left: -($width / 2) + px;
+  margin-top: -($height / 2) + px;
+}
+
+@mixin borderRadius($val: 4px){
+  border-radius         : $val;
+  -webkit-border-radius : $val;
+  -moz-border-radius    : $val;
+  -ms-border-radius     : $val;
+  -o-border-radius      : $val;
+}
+
+@mixin boxShadow($val){
+  box-shadow         : $val;
+  -webkit-box-shadow : $val;
+  -moz-box-shadow    : $val;
+  -ms-box-shadow     : $val;
+  -o-box-shadow      : $val;
+}
+
+%uiSelectAsSecondaryButton {
+  .ui-select-placeholder, .ui-select-match, .ui-select-match-text {
+    color: #FFFFFF;
+  }
+
+  .ui-select-match {
+
+    &[disabled]{
+      cursor: not-allowed;
+      .ui-select-toggle {
+        cursor: not-allowed;
+      }
+    }
+
+    &.btn-default-focus{
+      background-color: transparent;
+      border-color: transparent;
+      outline: 0;
+      outline-offset: 0;
+      box-shadow: none;
+    }
+  }
+
+  .ui-select-toggle {
+    color: #FFFFFF;
+    background: $btn-secondary;
+  }
+
+  .ui-select-choices {
+    color: #000000;
+
+    &.ui-select-choices-row {
+      &.active, &:hover {
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .ui-select-search {
+    width: 100%;
+  }
+}
+
+html, body {
+  overflow: hidden;
+}
+
+html, body, .main-view{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: $textColor;
+  background-color: $third-color;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+body {
+  background-color: $secondary-color;
+}
+
+:focus {
+  outline: 0 none !important;
+}
+
+.ui-selectable {
+  img, div, ul, li{
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+label {
+  font-weight: 300;
+}
+
+.hidden {
+  display: none;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.sidebar {
+  width: 220px;
+  position: absolute;
+  top: 83px;
+  bottom: 0;
+  min-height: 1px;
+  // border-right: 1px solid #666;
+  background-color: $lightPanelColor;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.body-wrapper {
+  background-color: $third-color;
+}
+
+
+/* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+// injector
+// endinjector

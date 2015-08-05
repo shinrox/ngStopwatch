@@ -1,0 +1,18 @@
+<div class="container-fluid no-padding home">
+  <div class="header-wrapper">
+    <div navbar></div>
+  </div>
+
+  <div class="sidebar">
+  </div>
+
+  <div class="body-wrapper">
+    <ul>
+      <li ng-repeat="timer in timers track by timer.name">
+        {{timer.name}} started at {{timer.started}}
+      </li>
+    </ul>
+  </div>
+
+</div>
+
