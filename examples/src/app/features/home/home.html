@@ -7,11 +7,44 @@
   </div>
 
   <div class="body-wrapper">
-    <ul>
-      <li ng-repeat="timer in timers track by timer.name">
-        {{timer.name}} started at {{timer.started}}
-      </li>
-    </ul>
+    <div class="timer" ng-repeat="timer in timers track by timer.id">
+      <h1>Timer: {{timer.name}} </h1>
+      <div class="actions">
+        <button href="" ng-click="timer.start()">Start</button>
+        <button href="" ng-click="timer.lap()">Lap</button>
+        <button href="" ng-click="timer.stop()">Stop</button>
+        <button href="" ng-click="timer.reset()">Reset</button>
+      </div>
+      <ul class="info">
+        <li>{{timer}}</li>
+        <li>
+          running: {{timer.running}}
+        </li>
+        <li>
+          created at: {{timer.created}}
+        </li>
+        <li>
+          current at: {{timer.current}}
+        </li>
+        <li>
+          currentLap at: {{timer.currentLap}}
+        </li>
+        <li>
+          stopped at: {{timer.stopped}}
+        </li>
+        <li>
+          lastLap at: {{timer.lastLap}}
+        </li>
+
+      </ul>
+      <ul class="laps">
+        <li ng-repeat="lap in timer.laps track by $index">
+          lap {{$index + 1}} : {{lap}}
+        </li>
+      </ul>
+
+    </div>
+
   </div>
 
 </div>

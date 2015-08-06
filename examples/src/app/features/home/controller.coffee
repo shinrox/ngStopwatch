@@ -6,5 +6,6 @@ angular.module "App.controllers"
 
   $scope.timers = []
 
-  $scope.timers.push stopwatch.start('one')
-  $scope.timers.push stopwatch.start('two')
+  $scope.timers.push stopwatch.create()
+  $scope.timers.push stopwatch.create({name: 'No Refresh', autoRefresh: false})
+  $scope.timers.push stopwatch.create({name: 'Different Refresh Rate', refreshRate: 500})
