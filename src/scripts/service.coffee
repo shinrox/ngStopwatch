@@ -46,9 +46,10 @@ angular.module 'ngStopwatch.services'
         @trackCurrent()
 
     stop: ->
+      $interval.cancel(@interval)
+      @interval = null
       now = new Date().getTime()
       return if !@running
-      $interval.cancel(@interval)
       @running = false
       @stopped = now
 
@@ -57,7 +58,6 @@ angular.module 'ngStopwatch.services'
 
     reset: ->
       angular.merge @, {
-        created: null
         current: 0
         stopped: null
         laps: []
@@ -70,13 +70,12 @@ angular.module 'ngStopwatch.services'
     lap: ->
       return if !@running
       $interval.cancel(@interval) # cancel any pending tracking
+      @interval = null
       now = new Date().getTime()
       if !@autoRefresh
         @current += now - @lastStart
         @currentLap += now - @lastStart
         @lastStart = now
-
-      # @currentLap += now - @lastStart
 
       @lastLap = @currentLap
       @currentLap = 0
@@ -86,12 +85,18 @@ angular.module 'ngStopwatch.services'
         @trackCurrent()
 
     trackCurrent: ()->
-      @interval = $interval =>
-        now = new Date().getTime()
-        @current += now - @lastStart
-        @currentLap += now - @lastStart
-        @lastStart = now
-      , @refreshRate
+      if @running
+        self = @
+        @interval = $interval ->
+          now = new Date().getTime()
+          self.current += now - self.lastStart
+          self.currentLap += now - self.lastStart
+          self.lastStart = now
+        , @refreshRate
+
+      else
+        $interval.cancel(@interval)
+        @interval = null
 
 
 
@@ -99,6 +104,5 @@ angular.module 'ngStopwatch.services'
 
   return API = {
     create: (config)->
-      timer = new StopWatch(config)
-      return timer
+      return new StopWatch(config)
   }
