@@ -1,14 +1,17 @@
 {
-  "name": "Stopwatch",
+  "name": "ngStopwatch",
   "version": "0.0.1",
-  "homepage": "https://github.com/shinrox/Stopwatch",
+  "homepage": "https://github.com/shinrox/ngStopwatch",
   "authors": [
     "shinrox <js.gusmao@hotmail.com>"
   ],
-  "description": "'simple stopwatch that allows time tracking'",
-  "main": "dist/stopwatch.min.js",
+  "description": "'Simple stopwatch that allows time tracking'",
+  "main": "dist/ngStopwatch.min.js",
   "keywords": [
-    "stopwatch"
+    "stopwatch",
+    "ngStopwatch",
+    "angular",
+    "time"
   ],
   "license": "MIT",
   "ignore": [
