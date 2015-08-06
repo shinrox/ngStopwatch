@@ -73,15 +73,15 @@ angular.module 'ngStopwatch.services'
       $interval.cancel(@interval) # cancel any pending tracking
       @interval = null
       now = new Date().getTime()
-      if !@autoRefresh
-        @current += now - @lastStart
-        @currentLap += now - @lastStart
-        @lastStart = now
+      @current += now - @lastStart
+      @currentLap += now - @lastStart
+
 
       @lastLap = @currentLap
-      @currentLap = 0
       @laps.push @lastLap
 
+      @lastStart = now
+      @currentLap = 0
       unless !@autoRefresh
         @trackCurrent()
 
