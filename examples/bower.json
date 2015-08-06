@@ -29,7 +29,8 @@
     "angular-ui-router": "~0.2.15",
     "angular": "~1.4.3",
     "bootstrap": "~3.3.5",
-    "bootstrap-sass-official": "~3.3.5"
+    "bootstrap-sass-official": "~3.3.5",
+    "ngStopwatch": "~0.0.1"
   },
   "resolutions": {
     "angular": "~1.4.3"
