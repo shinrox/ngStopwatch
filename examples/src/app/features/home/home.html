@@ -7,13 +7,12 @@
     <div class="timer" ng-repeat="timer in timers track by timer.id">
       <h1>Timer: {{timer.name}} </h1>
       <div class="actions">
-        <button href="" ng-click="timer.start()">Start</button>
-        <button href="" ng-click="timer.lap()">Lap</button>
-        <button href="" ng-click="timer.stop()">Stop</button>
-        <button href="" ng-click="timer.reset()">Reset</button>
+        <button class='btn btn-success outline' href="" ng-click="timer.start()">Start</button>
+        <button class='btn btn-info outline' href="" ng-click="timer.lap()">Lap</button>
+        <button class='btn btn-warning outline' href="" ng-click="timer.stop()">Stop</button>
+        <button class='btn btn-default outline' href="" ng-click="timer.reset()">Reset</button>
       </div>
       <ul class="info">
-        <li>{{timer}}</li>
         <li>
           running: {{timer.running}}
         </li>

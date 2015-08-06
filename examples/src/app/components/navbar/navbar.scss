@@ -3,7 +3,7 @@
   padding-bottom: 0;
   margin-bottom: 0;
   background-color: #fff;
-  border-color: darken(#fff, 5%);
+  border-color: #000;
   color: $textColor;
 }
 
@@ -22,28 +22,33 @@
 
 }
 
-.navbar-nav li a {
- line-height: 50px;
+.navbar-nav li {
  cursor: pointer;
 }
 
-
-.navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
-  background-color: darken($primary-color, 5%);
-}
-
-.nav > li > a:hover, .nav > li > a:focus {
-  background-color: darken($primary-color, 5%);
-}
-
-.nav.navbar-nav.navbar-right {
-  color: $textColor;
-}
-
-.navbar .navbar-brand, .navbar .navbar-nav > li > a {
-  color: $textColor;
-}
-
 .navbar-right {
+  padding: 25px 50px;
+}
 
+.navbar-right li {
+  margin: 0 10px;
+}
+
+.navbar-right li a{
+  padding: 0;
+}
+
+.navbar-nav > li > a.btn, .navbar-nav > li > a.btn.active, , .navbar-nav > li > a.btn:active {
+  border-radius: 0;
+  padding: 5px 16px;
+  background:none;
+  color: $textColor;
+}
+
+.navbar-nav > li > a.btn:hover {
+  border-radius: 0;
+  // border: none;
+  padding: 5px 16px;
+  background:none;
+  color: $textColor;
 }

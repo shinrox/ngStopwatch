@@ -56,8 +56,23 @@ label {
 }
 
 .body-wrapper {
-  background-color: #F1F0F1;
+  background-color: $secondary-color;
   padding: 30px;
+}
+
+.btn, .btn.active, a.btn, .btn:active, .btn:focus{
+  border-radius: 0;
+  padding: 5px 16px;
+  background:none;
+  color: $textColor;
+}
+
+.btn:hover, a.btn:hover {
+  border-radius: 0;
+  // border: none;
+  padding: 5px 16px;
+  background:none;
+  color: $textColor;
 }
 
 
