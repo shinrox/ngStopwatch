@@ -63,8 +63,9 @@ angular.module 'ngStopwatch.services'
         laps: []
         currentLap: 0
         lastLap: null
-        running: false
       }
+
+      @laps = []
 
 
     lap: ->
