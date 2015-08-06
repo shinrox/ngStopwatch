@@ -1,0 +1,49 @@
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  background-color: #fff;
+  border-color: darken(#fff, 5%);
+  color: $textColor;
+}
+
+.navbar-header {
+  height: 83px;
+
+  .navbar-brand {
+    font-size: 40px;
+    padding: 7px 10px 0 20px;
+
+    img {
+      width: auto;
+      height: 62px;
+    }
+  }
+
+}
+
+.navbar-nav li a {
+ line-height: 50px;
+ cursor: pointer;
+}
+
+
+.navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
+  background-color: darken($primary-color, 5%);
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: darken($primary-color, 5%);
+}
+
+.nav.navbar-nav.navbar-right {
+  color: $textColor;
+}
+
+.navbar .navbar-brand, .navbar .navbar-nav > li > a {
+  color: $textColor;
+}
+
+.navbar-right {
+
+}
