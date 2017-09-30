@@ -28,7 +28,7 @@ angular.module 'ngStopwatch.services'
       if @autoRefresh
         @trackCurrent()
 
-      @start()
+      @start() unless config.suppressAutoStart
 
 
     getTime: ->
